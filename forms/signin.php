@@ -1,12 +1,12 @@
 <?php
-session_start();
+session_start();  // Inicia la sesión para verificar si el usuario está autenticado.
 
-if (isset($_SESSION['loggedin']) === true) {
+if (isset($_SESSION['loggedin']) === true) {  // Si el usuario ya ha iniciado sesión, redirige a la página de inicio.
     header("Location: ../index.php");
-    exit();
+    exit();  // Detiene la ejecución después de redirigir.
 }
 
-$errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : "";
+$errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : "";  // Si hay un mensaje de error en la URL, lo captura y lo limpia para evitar inyecciones HTML.
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : "";
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="../css/login.css">
     <link rel="shortcut icon" href="../src/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMvZ08Z+JtW9eY2T0Jfex2DkLxhD/3ljJf9nY" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -56,6 +56,6 @@ $errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : "";
         </div>
     </div>
     <script src="../js/slider.js"></script>
-    <script src="../js/validation_form.js"></script> 
+    <script src="../js/validation_form.js"></script>
 </body>
 </html>

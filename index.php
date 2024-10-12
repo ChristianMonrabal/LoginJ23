@@ -1,9 +1,9 @@
 <?php
-session_start();
+session_start();  // Inicia una nueva sesión o reanuda la sesión existente.
 
-if (!isset($_SESSION['loggedin'])) {
-    header("Location: ./forms/signin.php");
-    exit(); 
+if (!isset($_SESSION['loggedin'])) {  // Verifica si la sesión tiene un usuario autenticado.
+    header("Location: ./forms/signin.php");  // Si no está autenticado, redirige a la página de inicio de sesión.
+    exit();  // Finaliza el script después de la redirección.
 }
 ?>
 
