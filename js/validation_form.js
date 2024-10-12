@@ -6,8 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validateUsername() {
         const usernameValue = usernameField.value.trim(); 
+        const hasNumbers = /\d/;
+
         if (usernameValue === '') {
-            usernameError.textContent = 'El campo de usuario no puede estar vacío.';
+            usernameError.textContent = 'Este campo no puede estar vacío.';
+            usernameError.style.color = 'red';
+        } else if (hasNumbers.test(usernameValue)) {
+            usernameError.textContent = 'Este campo no puede contener números.';
+            usernameError.style.color = 'red';
+        } else if (usernameValue.length < 4) {
+            usernameError.textContent = 'El nombre de usuario debe tener al menos 4 caracteres.';
             usernameError.style.color = 'red';
         } else {
             usernameError.textContent = ''; 
@@ -17,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function validatePassword() {
         const passwordValue = passwordField.value.trim();
         if (passwordValue === '') {
-            passwordError.textContent = 'El campo de contraseña no puede estar vacío.';
+            passwordError.textContent = 'Este campo no puede estar vacío.';
             passwordError.style.color = 'red';
         } else {
             passwordError.textContent = '';
