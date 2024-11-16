@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'db_escuelaJ23';
+$db = 'AD_J23';
 $user = 'root';
 $pass = '';
 

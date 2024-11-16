@@ -5,6 +5,6 @@ $_SESSION = array();
 
 session_destroy();
 
-header("Location: ../forms/signin.php");
+header("Location: ../public/signin.php");
 exit();
 ?>
